@@ -45,6 +45,10 @@ func newRouter(s *Server) *gin.Engine {
 	spyFamilyGroup := router.Group("/spyfamily")
 	applyRoutes(spyFamilyGroup, s.getSpyFamilyRoute())
 
+	// Register Todo API service.
+	todoGroup := router.Group("/todo")
+	applyRoutes(todoGroup, s.getTodoRoute())
+
 	return router
 }
 
